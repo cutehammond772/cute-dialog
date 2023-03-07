@@ -1,3 +1,5 @@
-export const test = (num: number) => {
+const test = (num: number) => {
   console.log(num);
 };
+
+export default test;
