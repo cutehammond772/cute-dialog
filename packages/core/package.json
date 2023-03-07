@@ -23,7 +23,8 @@
     "react": "^18.2.0"
   },
   "scripts": {
-    "build": "rollup -c"
+    "lint": "eslint src",
+    "build": "eslint src && rollup -c"
   },
   "eslintConfig": {
     "env": {

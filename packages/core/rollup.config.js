@@ -7,7 +7,7 @@ import typescript from "rollup-plugin-typescript2";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 
-process.env["BABEL_ENV"] = "production";
+process.env.BABEL_ENV = "production";
 
 const makeRollup = ({ input, output }) => ({
   input,
