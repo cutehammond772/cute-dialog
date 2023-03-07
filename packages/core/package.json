@@ -1,0 +1,45 @@
+{
+  "name": "@cute-dialog/core",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "author": {
+    "name": "cutehammond772",
+    "email": "cutehammond772@gmail.com",
+    "url": "https://github.com/cutehammond772"
+  },
+  "description": "The core of @cute-dialog library.",
+  "bugs": {
+    "url": "https://github.com/cutehammond772/cute-dialog/issues",
+    "email": "cutehammond772@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/cutehammond772/cute-dialog.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-flow": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/node": "^18.14.6",
+    "@types/react": "^18.0.28",
+    "rollup": "^3.18.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^4.9.5"
+  }
+}
