@@ -6,13 +6,15 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "airbnb",
+    "plugin:import/recommended",
+    "airbnb-typescript",
     "plugin:prettier/recommended",
   ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
+    project: "./tsconfig.json",
     ecmaVersion: "latest",
     sourceType: "module",
   },
@@ -20,6 +22,14 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+  },
+  globals: {
+    JSX: true,
+  },
+  settings: {
+    "import/resolver": {
+      typescript: {},
+    },
   },
   rules: {
     "prettier/prettier": [
@@ -29,5 +39,16 @@ module.exports = {
       },
     ],
     "no-console": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
+      },
+    ],
   },
 };
