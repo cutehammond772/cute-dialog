@@ -12,7 +12,14 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "@/*": ["./src/types/*"],
+      "@provider/*": ["./src/provider/*"],
+      "@resolver/*": ["./src/resolver/*"],
+      "@patcher/*": ["./src/patcher/*"],
+      "@utils/*": ["./src/utils/*"]
+    }
   },
   "include": ["src"]
 }

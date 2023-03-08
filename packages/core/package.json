@@ -23,7 +23,15 @@
     "react": "^18.2.0"
   },
   "scripts": {
-    "build": "rollup -c"
+    "lint": "eslint src",
+    "build": "eslint src && rollup -c"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -35,10 +43,24 @@
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.0",
     "@types/node": "^18.14.6",
     "@types/react": "^18.0.28",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.4",
     "rollup": "^3.18.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-tsconfig-paths": "^1.4.0",
     "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^4.9.5"
   }
