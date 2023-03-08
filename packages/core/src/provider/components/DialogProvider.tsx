@@ -1,16 +1,19 @@
-import * as React from "react";
-import { useCallback } from "react";
-import { useElements, useHandles, useProfiles, useReferences } from "@provider/hooks";
+import React, { useCallback } from "react";
 import { DialogReferenceKey, DialogTemplate } from "@/common";
-
-import DialogArea from "@lib/components/DialogArea";
-import DialogResolver from "@lib/components/DialogResolver";
+import { DialogAreaProfile } from "@/provider";
+import { DialogArea } from "@provider/components";
 import DialogProviderContext from "@provider/context";
+import { DialogResolver } from "@resolver/components";
+
+import useReferences from "@provider/hooks/useReferences";
+import useElements from "@provider/hooks/useElements";
+import useProfiles from "@provider/hooks/useProfiles";
+import useHandles from "@provider/hooks/useHandles";
 
 /**
  * Dialog를 관리하는 최상위 컴포넌트입니다.
  */
-const DialogProvider = ({ children }: React.PropsWithChildren) => {
+const DialogProvider = ({ children, className }: React.PropsWithChildren<DialogAreaProfile>) => {
   const { createRef, removeRef, references } = useReferences();
 
   const { registerElement, getElement } = useElements();
@@ -58,7 +61,7 @@ const DialogProvider = ({ children }: React.PropsWithChildren) => {
       }}
     >
       {children}
-      <DialogArea>
+      <DialogArea className={className}>
         {references
           .map((reference) => ({
             reference,

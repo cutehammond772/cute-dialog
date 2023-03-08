@@ -17,7 +17,7 @@
       "@/*": ["./src/types/*"],
       "@provider/*": ["./src/provider/*"],
       "@resolver/*": ["./src/resolver/*"],
-      "@hooks/*": ["./src/hooks/*"],
+      "@patcher/*": ["./src/patcher/*"],
       "@utils/*": ["./src/utils/*"]
     }
   },

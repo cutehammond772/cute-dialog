@@ -1,9 +1,11 @@
 import { babel } from "@rollup/plugin-babel";
+import tsConfigPaths from "rollup-plugin-tsconfig-paths";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import peerDeepsExternal from "rollup-plugin-peer-deps-external";
 import json from "@rollup/plugin-json";
 import typescript from "rollup-plugin-typescript2";
+import terser from "@rollup/plugin-terser";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 
@@ -15,6 +17,7 @@ const makeRollup = ({ input, output }) => ({
   output,
   plugins: [
     peerDeepsExternal(),
+    tsConfigPaths(),
     json(),
     nodeResolve({ extensions }),
     commonjs(),
@@ -24,6 +27,7 @@ const makeRollup = ({ input, output }) => ({
       exclude: "node_modules/*",
       include: `src/**/*.(${extensions.join("|")})`,
     }),
+    terser({ format: { comments: false } }),
   ],
 });
 

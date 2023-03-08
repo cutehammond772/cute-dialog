@@ -21,3 +21,7 @@ interface DialogProfileFeatures {
 export type DialogProviderContext = DialogContainerFeatures &
   DialogHandleFeatures &
   DialogProfileFeatures;
+
+export interface DialogAreaProfile {
+  className: string;
+}
