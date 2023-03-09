@@ -1,6 +1,8 @@
 export { usePatch } from "@patcher/hooks";
 
-export { DialogProvider, DialogArea } from "@provider/components";
+export { default as DialogProvider } from "@provider/components/DialogProvider";
+
+export { default as DialogArea } from "@provider/components/DialogArea";
 
 export { useDialogProvider } from "@provider/hooks";
 

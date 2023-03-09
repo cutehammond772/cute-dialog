@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
 import { DialogReferenceKey, DialogTemplate } from "@/common";
 import { DialogAreaProfile } from "@/provider";
-import { DialogArea } from "@provider/components";
+import DialogArea from "@provider/components/DialogArea";
 import DialogProviderContext from "@provider/context";
-import { DialogResolver } from "@resolver/components";
+import DialogResolver from "@resolver/components/DialogResolver";
 
 import useReferences from "@provider/hooks/useReferences";
 import useElements from "@provider/hooks/useElements";

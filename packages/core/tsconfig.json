@@ -1,25 +1,28 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "dist",
     "target": "es5",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "module": "ESNext",
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "module": "ESNext",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["./src/types/*"],
       "@provider/*": ["./src/provider/*"],
       "@resolver/*": ["./src/resolver/*"],
       "@patcher/*": ["./src/patcher/*"],
       "@utils/*": ["./src/utils/*"]
-    }
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true
+      }
+    ]
   },
   "include": ["src"]
 }
