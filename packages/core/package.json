@@ -1,18 +1,19 @@
 {
   "name": "@cute-dialog/core",
-  "version": "0.1.1",
+  "version": "0.1.2",
+  "type": "module",
   "exports": {
     ".": {
-      "require": {
-        "types": "./dist/cjs/index.d.ts",
-        "default": "./dist/cjs/index.js"
-      },
       "import": {
-        "types": "./dist/esm/index.d.mts",
-        "default": "./dist/esm/index.mjs"
-      }
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": "./dist/cjs/index.cjs"
     }
   },
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "files": [
     "dist"
   ],
@@ -37,11 +38,9 @@
   "scripts": {
     "lint": "eslint src",
     "bundle": "rollup -c",
-    "decl:cjs": "ttsc -p ./tsconfig.cjs.json",
-    "decl:esm": "ttsc -p ./tsconfig.esm.json",
+    "decl": "ttsc -p ./tsconfig.esm.json",
     "clear:win": "if exist dist rmdir dist /s /q",
-    "convert:mts:win": "ren .\\dist\\esm\\index.d.ts *.mts",
-    "build:win": "yarn clear:win && yarn lint && yarn bundle && yarn decl:cjs && yarn decl:esm && yarn convert:mts:win"
+    "build:win": "yarn clear:win && yarn lint && yarn bundle && yarn decl"
   },
   "eslintConfig": {
     "env": {

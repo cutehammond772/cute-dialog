@@ -34,7 +34,7 @@ export default [
     input: "./src/index.ts",
     output: [
       {
-        file: "./dist/cjs/index.js",
+        file: "./dist/cjs/index.cjs",
         format: "cjs",
       },
     ],
@@ -43,7 +43,7 @@ export default [
     input: "./src/index.ts",
     output: [
       {
-        file: "./dist/esm/index.mjs",
+        file: "./dist/esm/index.js",
         format: "esm",
       },
     ],
