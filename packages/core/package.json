@@ -1,8 +1,22 @@
 {
   "name": "@cute-dialog/core",
-  "version": "0.1.0",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "version": "0.1.2",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "author": {
     "name": "cutehammond772",
     "email": "cutehammond772@gmail.com",
@@ -18,13 +32,15 @@
     "directory": "https://github.com/cutehammond772/cute-dialog.git"
   },
   "license": "MIT",
-  "type": "module",
   "peerDependencies": {
     "react": "^18.2.0"
   },
   "scripts": {
     "lint": "eslint src",
-    "build": "eslint src && rollup -c"
+    "bundle": "rollup -c",
+    "decl": "ttsc -p ./tsconfig.esm.json",
+    "clear:win": "if exist dist rmdir dist /s /q",
+    "build:win": "yarn clear:win && yarn lint && yarn bundle && yarn decl"
   },
   "eslintConfig": {
     "env": {
@@ -48,6 +64,7 @@
     "@types/react": "^18.0.28",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
+    "@zerollup/ts-transform-paths": "^1.7.18",
     "eslint": "^8.35.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.7.0",
@@ -60,8 +77,10 @@
     "prettier": "^2.8.4",
     "rollup": "^3.18.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-tsconfig-paths": "^1.4.0",
+    "rollup-plugin-typescript-paths": "^1.4.0",
     "rollup-plugin-typescript2": "^0.34.1",
-    "typescript": "^4.9.5"
+    "ttypescript": "^1.5.15",
+    "typescript": "^4.9.5",
+    "typescript-transform-paths": "^3.4.6"
   }
 }
